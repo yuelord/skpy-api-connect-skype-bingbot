@@ -1,14 +1,13 @@
 from skpy import Skype
 from bs4 import BeautifulSoup
-# 从__init__中读取skpye账号和密码
-from account import skpye_name, password
+# 从__init__中读取skpye账号和密码，bing聊天机器人的全局ID（skype_id）
+from account import skpye_name, password, skype_id
 import html
-
 
 # 登录Skype
 sk = Skype(skpye_name, password)
 # 与bing建立联系
-chat = sk.chats['28:cf0e6215-34fe-xxx-xxxx-xxxxxxxxxxxx']
+chat = sk.chats[skype_id]
 
 # 接收消息
 chat = chat.getMsgs()

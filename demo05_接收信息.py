@@ -1,13 +1,13 @@
 from skpy import Skype
-# 从__init__中读取skpye账号和密码
-from account import skpye_name, password
+# 从__init__中读取skpye账号和密码，bing聊天机器人的全局ID（skype_id）
+from account import skpye_name, password, skype_id
 import datetime
 
 # 登录Skype
 sk = Skype(skpye_name, password)
 
 # 与bing机器人建立对话,获取指定窗口的聊天对象
-chat = sk.chats["28:cf0e6215-34fe-xxx-xxxx-xxxxxxxxxxxx"]
+chat = sk.chats[skype_id]
 
 # 发送信息
 

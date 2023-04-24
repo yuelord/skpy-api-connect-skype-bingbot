@@ -4,13 +4,13 @@ import html  # 用来将实体字符转换为HTML标签,常用再有编程代码
 from bs4 import BeautifulSoup  # 快速将带有HTML标签的字符去掉，保留网页的文本
 import lxml  # 快速将获得的消息字符串,解释成网页,方便对消息中多余的HTML标签去除
 from skpy import Skype
-# 从__init__中读取skpye账号和密码
-from account import skpye_name, password
+# 从__init__中读取skpye账号和密码，bing聊天机器人的全局ID（skype_id）
+from account import skpye_name, password, skype_id
 
 # 登录Skype
 sk = Skype(skpye_name, password)
 # 与bing建立联系
-chat = sk.chats['28:cf0e6215-34fe-xxx-xxxx-xxxxxxxxxxxx']
+chat = sk.chats[skype_id]
 
 
 # 接收消息
